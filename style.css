@@ -1,0 +1,297 @@
+/* Compiled CSS – copy this if you don't want to compile Sass manually */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #0ea5e9;
+  color: white;
+}
+.btn-primary:hover {
+  background: #0b8ac7;
+  transform: translateY(-2px);
+}
+
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+}
+.navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .navbar .nav-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  text-decoration: none;
+}
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.navbar .nav-links a:hover, .navbar .nav-links a.active {
+  color: #0ea5e9;
+  border-bottom-color: #0ea5e9;
+}
+
+.hero {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+.hero .hero-title {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.8s ease-out;
+}
+.hero .hero-subtitle {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.about {
+  padding: 60px 0;
+}
+.about .about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .about .about-container {
+    flex-direction: column;
+  }
+}
+.about .profile-img {
+  flex: 1;
+}
+.about .profile-img img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+.about .about-text {
+  flex: 2;
+}
+.about .skills {
+  margin-top: 24px;
+}
+.about .skill-item {
+  margin-bottom: 16px;
+}
+.about .skill-item span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.about .skill-item .skill-bar {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.about .skill-item .skill-bar .skill-progress {
+  height: 100%;
+  background: #0ea5e9;
+  border-radius: 10px;
+  width: 0;
+  animation: growBar 1s ease-out forwards;
+}
+
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target);
+  }
+}
+.skill-item:nth-child(1) .skill-progress {
+  --target: 90%;
+  animation-delay: 0.1s;
+}
+
+.skill-item:nth-child(2) .skill-progress {
+  --target: 80%;
+  animation-delay: 0.3s;
+}
+
+.skill-item:nth-child(3) .skill-progress {
+  --target: 60%;
+  animation-delay: 0.5s;
+}
+
+.skill-item:nth-child(4) .skill-progress {
+  --target: 50%;
+  animation-delay: 0.7s;
+}
+
+.projects {
+  padding: 40px 0;
+  background: #f8fafc;
+}
+.projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.projects .project-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.projects .project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.projects .project-card:hover .project-overlay {
+  opacity: 1;
+}
+.projects .project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.projects .project-card .project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 165, 233, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.projects .project-card .project-overlay h3 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.contact {
+  padding: 60px 0;
+}
+.contact .contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+.contact .contact-form .form-group {
+  margin-bottom: 24px;
+}
+.contact .contact-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.contact .contact-form .form-group input, .contact .contact-form .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+.contact .contact-form .form-group input:focus, .contact .contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+.contact .contact-form .btn-primary {
+  width: 100%;
+}
+
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  footer .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+footer .footer-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+footer .footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+footer .footer-links a:hover {
+  color: #ffffff;
+}
